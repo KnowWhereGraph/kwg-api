@@ -1,0 +1,5 @@
+fastapi
+rdflib
+sparqlwrapper
+uvicorn
+jinja2
