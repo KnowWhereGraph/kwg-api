@@ -56,7 +56,6 @@ class NodeNegotiator(ContentNegotiator):
         rdf = self._get_rdf()
         return Response(content=rdf, media_type=self.request_format)
 
-
     def _get_rdf(self) -> QueryResult.ConvertResult:
         """
         Gets an RDF representation of a node.
@@ -82,4 +81,5 @@ class NodeNegotiator(ContentNegotiator):
         )
         if not resource_id_shortened:
             resource_id_shortened = self.resource_id
+        print(self.base_address_https)
         return RedirectResponse(url=f"{browse_url}#{resource_id_shortened}")

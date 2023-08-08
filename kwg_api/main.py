@@ -19,7 +19,7 @@ logging.basicConfig(level=logging.INFO)
     "URI of a node representing an ontology term and returns information about it.",
     tags=["Node Information"],
 )
-async def get_resource(request: Request, resource_id: str) -> Response | None:
+async def get_resource(request: Request, resource_id: str) -> Response:
     """
     Gets information about a node by
     1. Redirecting to a URL with information on it
@@ -38,7 +38,7 @@ async def get_resource(request: Request, resource_id: str) -> Response | None:
     description="Retrieves information about a resource type node in the graph database..",
     tags=["Node Information"],
 )
-async def get_ontology_resource(request: Request, resource_id: str) -> Response | None:
+async def get_ontology_resource(request: Request, resource_id: str) -> Response:
     """
     Gets information about a node describing an aspect of an onotology by
     1. Redirecting to a URL with information on it
@@ -68,4 +68,4 @@ async def get_vocabulary(request: Request) -> Response:
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=80)
+    uvicorn.run(app, host="0.0.0.0", port=80, reload=True)

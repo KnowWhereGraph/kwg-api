@@ -28,7 +28,6 @@ class PrefixBuilder:
         """
         file_loader = FileSystemLoader("")
         env = Environment(loader=file_loader)
-        raise ValueError(os.getcwd())
         template = env.get_template("kwg_api/resources/vocabulary.json")
         context = template.render(
             base_kwg_url_http=os.environ.get("base_address_http"),

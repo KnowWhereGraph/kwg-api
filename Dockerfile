@@ -12,4 +12,4 @@ COPY poetry.lock pyproject.toml README.md ./
 # Use no-root because the root code folder hasn't been added yet
 RUN poetry install --no-root --without dev
 COPY kwg_api/ kwg_api/
-CMD ["poetry", "run", "start"]
+CMD ["poetry", "run", "uvicorn", "kwg_api.main:app", "--host", "0.0.0.0", "--port", "80"]

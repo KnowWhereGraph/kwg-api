@@ -25,4 +25,5 @@ New library items belong in `kwg_api/lib` and should be accompanied by unit test
 
 Code Style
 ----------
-Specific parameters can be found in `pyproject.toml`
+
+The style should conform to the black tool. Linting is automated through poetry. Refer to the README for instructions on running. Specific parameters and new linters can be added in `pyproject.toml`.
