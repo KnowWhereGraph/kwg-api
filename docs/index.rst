@@ -16,7 +16,7 @@ Features
 --------
 
 Content Negotiation
-_______
+___________________
 
 KnowWhereGraph's API supports returning information about a node in several different formats.
 The current supported RDF mimetypes are
@@ -26,15 +26,15 @@ The current supported RDF mimetypes are
 - `application/rdf+xml`
 - `text/turtle`
 
+More information on negotiation can be found `here <./content-negotiation.html>`_
 
 Developing
 ----------
 KnowWhereGraph's API is open source and is open to contributions. GitHub acts as place for issue tracking and project scoping.
-For more information on development guidelines, refer to the Github README.
+For more information on development guidelines, refer to the Github README and the `developing docs <./developing.html>`_.
 
 Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
