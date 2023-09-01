@@ -14,9 +14,8 @@ logging.basicConfig(level=logging.INFO)
 @app.get(
     "/lod/ontology/{resource_id}",
     summary="Get information about an ontology term",
-    description="The KnowWhereGraph ontology is loaded into the backing graph database. During the process of mapping"
-    "an ontology term to a node, a unique identifier is assigned to the node. This endpoint takes the"
-    "URI of a node representing an ontology term and returns information about it.",
+    description="This endpoint takes the URI of a node representing an ontology term and returns information about it, depending on the accept header. "
+                "If no custom header is set, the endpoint will issue a redirect to the browser.",
     tags=["Node Information"],
 )
 async def get_resource(request: Request, resource_id: str) -> Response:
