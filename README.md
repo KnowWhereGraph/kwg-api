@@ -1,0 +1,60 @@
+# KWG API
+
+API service for KnowWhereGraph
+
+## Running
+
+To run the API in a production setting, deploy with docker
+1. `docker build -t kwg-api .`
+2. `docker run -d --name kwg-api -p 80:80 kwg-api`
+
+Visit the redoc page at http://127.0.0.1:80/redoc
+
+Visit the swagger page at http://127.0.0.1:80/docs
+
+## Features
+
+- Node de-referencing
+- Common vocabulary retrieval
+
+## Developing
+
+Changes should be submitted as a pull request to the `development` branch.
+
+A number of tools should be run before submitting the pull request.
+
+```bash
+poetry run mypy .
+poetry run black .
+poetry run isort .
+```
+
+Install [sphinx-doc](https://www.sphinx-doc.org/en/master/usage/installation.html)
+
+### Running Locally
+
+The API can be run locally when developing. To run,
+
+```bash
+poetry install
+poetry run uvicorn kwg_api.main:app --reload --port 80
+```
+
+### Testing
+
+The unit tests can be run through pytest with
+
+```commandline
+poetry run pytest
+```
+
+## Building Docs
+
+The API uses the sphinx documentation formation. To build the documentation, first [install sphinx](https://www.sphinx-doc.org/en/master/usage/installation.html).
+
+Then,
+
+```commandline
+cd docs
+make build
+```
