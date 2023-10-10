@@ -2,7 +2,7 @@ version: '3'
 
 services:
   api:
-    container_name: kg-api
+    container_name: kwg-api
     build:
       context: ./kwg-api/
       dockerfile: Dockerfile
