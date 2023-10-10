@@ -1,7 +1,5 @@
 FROM python:3.10
 
-ENV base_address_http=http://stko-kwg.geog.ucsb.edu
-ENV base_address_https=https://stko-kwg.geog.ucsb.edu
 WORKDIR ./kwg-api/
 
 RUN pip install poetry

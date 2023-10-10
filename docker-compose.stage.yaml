@@ -6,7 +6,7 @@ services:
     ports:
       - '80:80'
     environment:
-      - base_address_http=http://stko-kwg.geog.ucsb.edu
-      - base_address_https=https://stko-kwg.geog.ucsb.edu
+      - base_address_http=http://staging.knowwheregraph.org
+      - base_address_https=https://staging.knowwheregraph.org
     networks:
       - kwg_network
