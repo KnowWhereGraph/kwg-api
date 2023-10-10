@@ -29,8 +29,6 @@ poetry run black .
 poetry run isort .
 ```
 
-Install [sphinx-doc](https://www.sphinx-doc.org/en/master/usage/installation.html)
-
 ### Running Locally
 
 The API can be run locally when developing. To run,
@@ -38,6 +36,14 @@ The API can be run locally when developing. To run,
 ```bash
 poetry install
 poetry run uvicorn kwg_api.main:app --reload --port 80
+```
+
+#### Via Docker
+
+The API can also be run using the `docker-compose.dev.yaml` file with
+
+```commandline
+docker-compose -f docker-compose.local.yaml up
 ```
 
 ### Testing
