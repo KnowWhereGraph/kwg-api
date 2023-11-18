@@ -4,13 +4,28 @@ API service for KnowWhereGraph
 
 ## Running
 
-To run the API in a production setting, deploy with docker
-1. `docker build -t kwg-api .`
-2. `docker run -d --name kwg-api -p 80:80 kwg-api`
+The API service is meant to be run under full stack operating conditions. There are several flavors of the API, which correspond to different docker-compose files.
 
-Visit the redoc page at http://127.0.0.1:80/redoc
+1. local: Uses a local GraphDB deployment
+2. stage: Uses the staging GraphDB deployment
+3. prod: Uses the production GraphDB deployment
 
-Visit the swagger page at http://127.0.0.1:80/docs
+### Outside of the Stack
+
+To run the API in a production setting, outside the full stack, deploy with docker using
+
+```bash
+docker-compose -f docker-compose.dev.yaml up
+```
+
+This avoids the inclusion of the service in the `kwg_netowrk`, which is used when doing a full stack deployment.
+
+Visit the redoc page at http://localhost/redoc
+
+Visit the swagger page at http://localhost/docs
+
+Test the redirection with http://localhost/lod/resource/hazard.1183609.5434007
+
 
 ## Features
 
@@ -27,23 +42,6 @@ A number of tools should be run before submitting the pull request.
 poetry run mypy .
 poetry run black .
 poetry run isort .
-```
-
-### Running Locally
-
-The API can be run locally when developing. To run,
-
-```bash
-poetry install
-poetry run uvicorn kwg_api.main:app --reload --port 80
-```
-
-#### Via Docker
-
-The API can also be run using the `docker-compose.dev.yaml` file with
-
-```commandline
-docker-compose -f docker-compose.local.yaml up
 ```
 
 ### Testing
