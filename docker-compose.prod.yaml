@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  kwg-api:
+    container_name: kwg-api
+    build:
+      context: ./kwg-api/
+      dockerfile: Dockerfile
+    image: kwg-api
+    ports:
+      - '8080:8080'
+    environment:
+      - base_address_http=http://stko-kwg.geog.ucsb.edu
+      - base_address_https=https://stko-kwg.geog.ucsb.edu
+    networks:
+      - kwg_network

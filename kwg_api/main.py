@@ -3,6 +3,7 @@ import logging
 
 import uvicorn
 from fastapi import FastAPI, Request, Response
+from prometheus_fastapi_instrumentator import Instrumentator
 
 from kwg_api.api.node_negotiator import NodeNegotiator
 from kwg_api.lib.prefix_builder import PrefixBuilder
@@ -15,7 +16,7 @@ logging.basicConfig(level=logging.INFO)
     "/lod/ontology/{resource_id}",
     summary="Get information about an ontology term",
     description="This endpoint takes the URI of a node representing an ontology term and returns information about it, depending on the accept header. "
-                "If no custom header is set, the endpoint will issue a redirect to the browser.",
+    "If no custom header is set, the endpoint will issue a redirect to the browser.",
     tags=["Node Information"],
 )
 async def get_resource(request: Request, resource_id: str) -> Response:
@@ -66,5 +67,7 @@ async def get_vocabulary(request: Request) -> Response:
     return Response(json.dumps(PrefixBuilder().build(), indent=2))
 
 
+Instrumentator().instrument(app).expose(app)
+
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=80, reload=True)
+    uvicorn.run(app, host="0.0.0.0", port=8080, reload=True)
