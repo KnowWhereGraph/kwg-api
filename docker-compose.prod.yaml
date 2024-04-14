@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  api:
+  kwg-api:
     container_name: kwg-api
     build:
       context: ./kwg-api/
