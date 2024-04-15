@@ -6,11 +6,11 @@ API service for KnowWhereGraph
 
 To run the API in a production setting, deploy with docker
 1. `docker build -t kwg-api .`
-2. `docker run -d --name kwg-api -p 80:80 kwg-api`
+2. `docker run -d --name kwg-api -p 8080:8080 kwg-api`
 
-Visit the redoc page at http://127.0.0.1:80/redoc
+Visit the redoc page at http://127.0.0.1:8080/redoc
 
-Visit the swagger page at http://127.0.0.1:80/docs
+Visit the swagger page at http://127.0.0.1:8080/docs
 
 ## Features
 
