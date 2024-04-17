@@ -2,16 +2,6 @@
 
 API service for KnowWhereGraph
 
-## Running
-
-To run the API in a production setting, deploy with docker
-1. `docker build -t kwg-api .`
-2. `docker run -d --name kwg-api -p 8080:8080 kwg-api`
-
-Visit the redoc page at http://127.0.0.1:8080/redoc
-
-Visit the swagger page at http://127.0.0.1:8080/docs
-
 ## Features
 
 - Node de-referencing
@@ -29,23 +19,6 @@ poetry run black .
 poetry run isort .
 ```
 
-### Running Locally
-
-The API can be run locally when developing. To run,
-
-```bash
-poetry install
-poetry run uvicorn kwg_api.main:app --reload --port 80
-```
-
-#### Via Docker
-
-The API can also be run using the `docker-compose.dev.yaml` file with
-
-```commandline
-docker-compose -f docker-compose.local.yaml up
-```
-
 ### Testing
 
 The unit tests can be run through pytest with
@@ -53,6 +26,7 @@ The unit tests can be run through pytest with
 ```commandline
 poetry run pytest
 ```
+
 
 ## Building Docs
 
@@ -63,4 +37,32 @@ Then,
 ```commandline
 cd docs
 make build
+```
+
+## Running
+
+When the API is running, the following pages can be used to play with the endpoint
+
+Visit the redoc page at http://127.0.0.1:8080/redoc
+
+Visit the swagger page at http://127.0.0.1:8080/docs
+
+
+The API can be run locally when developing. To run,
+
+### For local Development
+
+#### Non-Docker
+
+```bash
+poetry install
+poetry run uvicorn kwg_api.main:app --reload --port 80
+```
+
+### With Docker
+
+The API can also be run using the `docker-compose.dev.yaml` file with
+
+```commandline
+docker-compose -f docker-compose.dev.yaml up
 ```
