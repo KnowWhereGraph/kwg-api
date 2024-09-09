@@ -75,11 +75,9 @@ class NodeNegotiator(ContentNegotiator):
 
         :return: A response signaling a redirect to a URL
         """
-        browse_url = f"{self.base_browse_address}/browse/"
         resource_id_shortened = PrefixBuilder.resolve_prefix(
             self.request_url, self.resource_id
         )
         if not resource_id_shortened:
             resource_id_shortened = self.resource_id
-        print(self.base_address_https)
-        return RedirectResponse(url=f"{browse_url}#{resource_id_shortened}")
+        return RedirectResponse(url=f"{self.base_browse_address}#{resource_id_shortened}")
