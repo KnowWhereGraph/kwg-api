@@ -33,6 +33,7 @@ class PrefixBuilder:
             base_kwg_url_http=os.environ.get("base_address_http"),
             base_kwg_url_https=os.environ.get("base_address_https"),
         )
+        print( json.loads(context))
         return json.loads(context)
 
     @staticmethod
@@ -54,7 +55,7 @@ class PrefixBuilder:
             # Split the resource out of the . It should look like
             # {base_address}/lod/resource/
             base_url = str(full_uri).split(resource_id)[0]
-
+            print(base_url)
         except IndexError:
             logging.warning(
                 f"Failed to find a prefix for URI {full_uri}", exc_info=True
@@ -62,6 +63,8 @@ class PrefixBuilder:
             return None
         try:
             # Find the prefix (key) whose full path (value) matches
+            print("1234")
+            print(f"{vocab[base_url]}:{resource_id}")
             return f"{vocab[base_url]}:{resource_id}"
         except KeyError:
             logging.warning(

@@ -18,6 +18,7 @@ class ContentNegotiator:
         """
         self.base_address_http = os.getenv("base_address_http")
         self.base_address_https = os.getenv("base_address_https")
+        self.base_browse_address = os.getenv("base_browse_address")
         accept_header = request.headers.get("accept")
         if not accept_header:
             raise ValueError("Failed to read the request headers")

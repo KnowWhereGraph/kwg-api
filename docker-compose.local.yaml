@@ -12,5 +12,6 @@ services:
     environment:
       - base_address_http=http://localhost
       - base_address_https=https://localhost
+      - base_browse_address=staging.knowwheregraph.org/browse
     networks:
       - kwg_network

@@ -12,5 +12,6 @@ services:
     environment:
       - base_address_http=http://staging.knowwheregraph.org
       - base_address_https=https://staging.knowwheregraph.org
+      - base_browse_address=staging.knowwheregraph.org/browse
     networks:
       - kwg_network
