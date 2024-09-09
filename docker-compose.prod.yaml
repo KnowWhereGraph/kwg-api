@@ -10,8 +10,8 @@ services:
     ports:
       - '8080:8080'
     environment:
-      - base_address_http=http://stko-kwg.geog.ucsb.edu
-      - base_address_https=https://stko-kwg.geog.ucsb.edu
+      - base_address_http=http://kwg-api:8080
+      - base_address_https=https://kwg-api:8080
       - base_browse_address=https://stko-kwg.geog.ucsb.edu/browse
     networks:
       - kwg_network
