@@ -6,10 +6,12 @@ services:
     build:
       context: ./kwg-api/
       dockerfile: Dockerfile
+    image: kwg-api
     ports:
       - '8080:8080'
     environment:
-      - base_address_http=http://staging.knowwheregraph.org
-      - base_address_https=https://staging.knowwheregraph.org
+      - base_address_http=http://localhost
+      - base_address_https=https://localhost
+      - base_browse_address=https://staging.knowwheregraph.org/browse
     networks:
       - kwg_network

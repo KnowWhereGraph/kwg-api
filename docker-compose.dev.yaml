@@ -4,10 +4,11 @@ services:
   kwg-api:
     container_name: kwg-api
     build:
-      context: .
+      context: ./kwg-api/
       dockerfile: Dockerfile
+    image: kwg-api
     ports:
-      - '8080:8080'
+      - '80:8080'
     environment:
-      - base_address_http=http://staging.knowwheregraph.org
-      - base_address_https=https://staging.knowwheregraph.org
+      - base_address_http=https://stko-kwg.geog.ucsb.edu
+      - base_address_https=https://stko-kwg.geog.ucsb.edu

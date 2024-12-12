@@ -54,7 +54,6 @@ class PrefixBuilder:
             # Split the resource out of the . It should look like
             # {base_address}/lod/resource/
             base_url = str(full_uri).split(resource_id)[0]
-
         except IndexError:
             logging.warning(
                 f"Failed to find a prefix for URI {full_uri}", exc_info=True
