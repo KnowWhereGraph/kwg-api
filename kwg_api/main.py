@@ -8,9 +8,9 @@ from prometheus_fastapi_instrumentator import Instrumentator
 from kwg_api.api.node_negotiator import NodeNegotiator
 from kwg_api.lib.prefix_builder import PrefixBuilder
 
-app = FastAPI(title="KnowWhereGraph API", version="1.0.0")
 logging.basicConfig(level=logging.INFO)
-
+app = FastAPI(title="KnowWhereGraph API", version="1.0.0")
+Instrumentator().instrument(app).expose(app)
 
 @app.get(
     "/lod/ontology/{resource_id}",
